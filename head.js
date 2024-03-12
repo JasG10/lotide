@@ -7,4 +7,4 @@ const head = function(arr) {
 
 // TEST CODE
 
-module.exports = assertEqual;
+module.exports = head;
