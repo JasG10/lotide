@@ -1,6 +1,6 @@
 
 const middle = require('../middle');
-const assertArraysEqual = require('chai').assertArraysEqual;
+const assert = require('chai').assert;
 
 describe('middle function', () => {
     it('should return an empty array for an input array with one element', () => {
