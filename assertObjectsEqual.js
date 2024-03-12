@@ -23,6 +23,18 @@ const eqObjects = function(object1, object2) {
     return true;
 };
 
+const eqArrays = function (ar1, ar2) {
+    if (ar1.length !== ar2.length){
+        return false;
+    }
+    for (let i = 0; i < ar1.length; i++){
+        if (ar1[i] !== ar2[i]){
+            return false;
+        }
+    }
+    return true;
+};
+
 const assertObjectsEqual = function(actual, expected) {
     const inspect = require('util').inspect;
     console.log(`Example label: ${inspect(actual)}`);
@@ -33,6 +45,6 @@ const assertObjectsEqual = function(actual, expected) {
     }
 };
 
-assertObjectsEqual([1, 2, 3], [1, 2, 3]); // => true
-assertObjectsEqual([1, 2, 3], [3, 2, 1]); // => false
+assertObjectsEqual({a: 1, b: 2, c: 3},{a: 1, b: 2, c: 3}); // => true
+assertObjectsEqual ({a: 1, b: 2, c: 4},{a: 1, b: 2, c: 3});// => false
   
