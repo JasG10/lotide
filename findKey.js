@@ -8,7 +8,7 @@ const assertEqual = function(actual, expected) {
 
 const findKey = function(object, callback) {
     for (const key in object) {
-        if (object.hasOwnProperty(key) && callback(object[key])) {
+        if (callback(object[key])) {
             return key;
         }
     }
@@ -22,7 +22,7 @@ const exampleKey = {
 };
 
 const result = findKey(exampleKey, obj => obj.value === 10);
-assertEqual(result, 'second'); // This should pass
+assertEqual(result, 'second');
 
 const resultNotFound = findKey(exampleKey, obj => obj.value === 20);
-assertEqual(resultNotFound, undefined); // This should pass
+assertEqual(resultNotFound, undefined); 
